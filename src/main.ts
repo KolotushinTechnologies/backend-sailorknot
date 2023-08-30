@@ -6,7 +6,8 @@ import { ValidationPipe } from "./pipes/validation.pipe";
 
 async function start() {
     const PORT = process.env.PORT || 8000;
-    const app = await NestFactory.create(AppModule)
+    const app = await NestFactory.create(AppModule);
+    app.enableCors();
 
     const config = new DocumentBuilder()
         .setTitle('Sailorknot API')
